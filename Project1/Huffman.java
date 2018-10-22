@@ -79,11 +79,12 @@ public class Huffman {
         long start = System.currentTimeMillis();
         Tree tree = buildTree(charFreqs);
         System.out.println("time taken to build tree  : "+(System.currentTimeMillis() - start));
+        
+        
         Hashtable<String, String> table = new Hashtable<>();
         buildTable(tree, new StringBuffer(),table);
       
         StringBuffer temp2 = new StringBuffer();
-        
         start = System.currentTimeMillis();
         for(char c : input.toCharArray()) {
         	temp2.append(table.get(String.valueOf(c)));
